@@ -10,7 +10,7 @@ def longest_substring(s: str) -> int:
     pass
 
 
-function longestSubstring(s) {
+function longest_Substring(s) {
     if (!s) return 0;
 
     let charIndex = {};
