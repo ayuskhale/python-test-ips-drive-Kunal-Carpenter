@@ -6,29 +6,19 @@ def smallest_missing_positive_integer(nums: List[int]) -> int:
 
     """
     pass
-function smallestMissingPositiveInteger(nums) {
+def smallest_missing_positive_integer(nums):
+    n = len(nums)
+    present = [False] * (n + 1)
 
-  // Implement the function smallest_missing_positive_integer
+    for num in nums:
+        if 0 < num <= n:
+            present[num] = True
 
-  let n = nums.length;
-  let present = new Array(n + 1).fill(false);
+    for i in range(1, n + 1):
+        if not present[i]:
+            return i
 
-  for (let i = 0; i < n; i++) {
-      if (nums[i] > 0 && nums[i] <= n) {
-          present[nums[i]] = true;
-      }
-  }
-
-  for (let i = 1; i <= n; i++) {
-      if (!present[i]) {
-          return i;
-      }
-  }
-
-  return n + 1;
-}
-
-module.exports = smallestMissingPositiveInteger;
+    return n + 1
 
 
 
